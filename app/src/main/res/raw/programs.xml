@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <string prog = "beginner">
+        <Train1>
+            <info>"chest and legs"</info>
+            <exercise1>
+            <name> push-ups:chest</name>
+                <sets>"number of sets:4</sets>
+                <rep> number of Repetitions:10</rep>
+            </exercise1>
+
+            <exercise2>
+                <name> Decline push ups:chest</name>
+                <sets> sets number of sets:2 </sets>
+                <re> "number of Repetitions:10 </re>
+            </exercise2>
+
+            <exercise3>
+                <sets> number of sets:3</sets>
+                <rep> number of Repetitions:until you drop</rep>
+            </exercise3>
+
+            <exercise4>
+                <name>Dumbbell triceps extension:Triceps</name>
+                <sets>"number of sets:3"></sets>
+                <rep> "number of Repetitions:10"></rep>
+            </exercise4>
+
+        </Train1>
+
+        <Train2>
+
+            <info>Back And Biceps</info>
+            <exercise1 >
+                <name> Table pull up:back</name>
+                <sets> "number of sets:4"></sets>
+                <rep> "number of Repetitions:10"></rep>
+            </exercise1>
+
+            <exercise2>
+                <name> suspend row :back</name>
+                <sets> number of sets:"></sets>
+                <rep> "number of Repetitions:12"></rep>
+            </exercise2>
+
+            <exercise3>
+                <name> Suspended one arm row:back</name>
+                <sets> number of sets:3"></sets>
+                <rep> number of Repetitions:10 </rep>
+            </exercise3>
+
+            <exercise4>
+                <name>Suspended biceps curl:bicep"></name>
+                <sets> number of sets:3 </sets>
+                <rep> number of Repetitions:10 </rep>
+            </exercise4>
+
+        </Train2>
+
+        <Train3>
+
+            <info> Legs And Shoulder </info>
+
+            <exercise1>
+                <name> Wall squats:legs></name>
+                <sets> number of sets:4 </sets>
+                <rep> number of Repetitions:10</rep>
+            </exercise1>
+
+            <exercise2>
+                <name>Suspended leg extensions:legs</name>
+                <sets> "number of sets:3"></sets>
+                <rep> number of Repetitions:12</rep>
+            </exercise2>
+
+            <exercise3>
+                <name> Suspended leg curl:legs</name>
+                <sets> number of sets:3</sets>
+                <rep> number of Repetitions:12</rep>
+            </exercise3>
+
+            <exercise4>
+                <name>Rubber band military press:shoulders</name>
+                <sets> number of sets:3</sets>
+                <rep> number of Repetitions:10</rep>
+            </exercise4>
+
+            <exercise5>
+                <name>Rubber band lateral raise:shoulders</name>
+                <sets> number of sets:3</sets>
+            <rep>number of Repetitions:12</rep>
+            </exercise5>
+
+        </Train3>
+
+    </string>
+
+
+
+
+    <string program ="intermediate">
+        <Train1>
+            <info>chest and legs </info>
+
+            <exercise1>
+                <name> Suspended chest press:chest</name>
+                <sets> number of sets:3</sets>
+                <rep> number of Repetitions:6-12</rep>
+            </exercise1>
+
+            <exercise2>
+                <name>  Decline push-up:chest </name>
+                <sets> number of sets:3</sets>
+                <rep> number of Repetitions:8-12</rep>
+            </exercise2>
+
+            <exercise3>
+                <name>  Suspended flies:chest </name>
+                <sets> number of sets:3</sets>
+                <rep> number of Repetitions:8-10 </rep>
+            </exercise3>
+
+            <exercise4>
+                <name> Chair Chest dips:chest</name>
+                <sets> number of sets:3</sets>
+                <rep> number of Repetitions:8-16</rep>
+            </exercise4>
+
+
+            <exercise5>
+                <name>  Dumbbell triceps extension:Triceps</name>
+                <sets> number of sets:3</sets>
+                <rep> number of Repetitions:6-10</rep>
+            </exercise5>
+
+            <exercise6>
+                <name>   Chair triceps dips:Triceps </name>
+                <sets> number of sets:3</sets>
+                <rep> number of Repetitions:8-12</rep>
+            </exercise6>
+
+            <exercise7>
+                <name>  Suspended overhead triceps extension :Triceps </name>
+                <sets> number of sets:3</sets>
+                <rep> number of Repetitions:6-10 </rep>
+            </exercise7>
+
+            <exercise8>
+                <name> Triceps push ups:Triceps</name>
+                <sets> number of sets:2 </sets>
+                <rep> number of Repetitions:8-10</rep>
+            </exercise8>
+
+        </Train1>
+
+        <Train2>
+
+            <info> Back And Biceps </info>
+
+            <exercise1 >
+                <name> Suspended lateral pull down:back</name>
+                <sets> number of sets:3</sets>
+                <rep> number of Repetitions:8-10</rep>
+            </exercise1>
+
+            <exercise2>
+                <name> Rubber band row:back </name>
+                <sets> number of sets:3</sets>
+                <rep> number of Repetitions:8-10</rep>
+            </exercise2>
+
+            <exercise3>
+                <name> Rubber band deadlift:back </name>
+                <sets> number of sets:3</sets>
+                <rep> number of Repetitions:8-10 </rep>
+            </exercise3>
+
+            <exercise4>
+                <name> Pull-ups:back</name>
+                <sets> number of sets:3</sets>
+                <rep> number of Repetitions:until you drop </rep>
+            </exercise4>
+
+            <exercise5>
+                <name>  Dumbbell hammer curls:Biceps</name>
+                <sets> number of sets:3</sets>
+                <rep> number of Repetitions:8-10</rep>
+            </exercise5>
+
+            <exercise6>
+                <name>   resistance band biceps curl:Biceps</name>
+                <sets> number of sets:3</sets>
+                <rep> number of Repetitions:8-10</rep>
+            </exercise6>
+
+            <exercise7>
+                <name>  Narrow grip chin ups:Biceps</name>
+                <sets> number of sets:4</sets>
+                <rep> number of Repetitions:8-10 </rep>
+            </exercise7>
+
+
+        </Train2>
+
+
+
+        <Train3>
+
+            <info> Legs And Shoulders </info>
+
+            <exercise1 >
+                <name> Rubber band lateral raise:shoulders</name>
+                <sets> number of sets:3</sets>
+                <rep> number of Repetitions:8-10 </rep>
+            </exercise1>
+
+            <exercise2>
+                <name> Rubber band military press:shoulders </name>
+                <sets> number of sets:3</sets>
+                <rep> number of Repetitions:6-10</rep>
+            </exercise2>
+
+            <exercise3>Shoulders</exercise3>
+
+            <exercise4>
+                <name>Hand stand shoulder press:shoulder </name>
+                <sets> number of sets:3</sets>
+                <rep> number of Repetitions:4-6 </rep>
+            </exercise4>
+
+            <exercise5>
+                <name>   Suspended leg curls:legs </name>
+                <sets> number of sets:3</sets>
+                <rep> number of Repetitions:8-10 </rep>
+            </exercise5>
+
+            <exercise6>
+                <name>    Sissy squats:legs </name>
+                <sets> number of sets:3</sets>
+                <rep> number of Repetitions:6-10</rep>
+            </exercise6>
+
+            <exercise7>
+                <name>  Rubber band squats :legs </name>
+                <sets> number of sets:3</sets>
+                <rep> number of Repetitions:6-10 </rep>
+            </exercise7>
+
+            <exercise8>
+                <name>Weighted calf raises:legs </name>
+                <sets> number of sets:4</sets>
+                <rep> number of Repetitions:8-12</rep>
+            </exercise8>
+
+        </Train3>
+
+
+    </string>
+
+
+</resources>

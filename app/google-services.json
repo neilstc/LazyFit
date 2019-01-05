@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "992225752539",
+    "firebase_url": "https://lazyfit-89644.firebaseio.com",
+    "project_id": "lazyfit-89644",
+    "storage_bucket": "lazyfit-89644.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:992225752539:android:99ce52480204e1fc",
+        "android_client_info": {
+          "package_name": "com.lazyfit.app.lazyfit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "992225752539-qd9du41s2odctbre08a5i5r4058jemi3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4Pyoig_0zLD8eAmNS5yM6No5caFcMkJk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

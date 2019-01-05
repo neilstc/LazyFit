@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+
+
+
+
+
+
+
+    <!--<string prog = "beginner">-->
+    <!--<Train1>-->
+    <!--<string info  = "chest and legs"></string>-->
+    <!--<exercise1>-->
+    <!--<string name = "push-ups:chest"></string>-->
+    <!--<string sets ="number of sets:4"></string>-->
+    <!--<string rep  ="number of Repetitions:10"></string>-->
+    <!--</exercise1>-->
+
+    <!--<exercise2>-->
+    <!--<string name = "Decline push ups:chest"></string>-->
+    <!--<string sets = "sets number of sets:2"></string>-->
+    <!--<string re= "number of Repetitions:10"></string>-->
+    <!--</exercise2>-->
+
+    <!--<exercise3>-->
+    <!--<string name= "chair dips:Triceps" ></string>-->
+    <!--<string sets= "number of sets:3"></string>-->
+    <!--<string rep= "number of Repetitions:until you drop"></string>-->
+    <!--</exercise3>-->
+
+    <!--<exercise4>-->
+    <!--<string name ="Dumbbell triceps extension:Triceps"></string>-->
+    <!--<string sets= "number of sets:3"></string>-->
+    <!--<string rep= "number of Repetitions:10"></string>-->
+    <!--</exercise4>-->
+
+    <!--</Train1>-->
+
+    <!--<Train2>-->
+
+    <!--<string info= "Back And Biceps"></string>-->
+    <!--<exercise1 >-->
+    <!--<string name= "Table pull up:back"></string>-->
+    <!--<string sets= "number of sets:4"></string>-->
+    <!--<string rep= "number of Repetitions:10"></string>-->
+    <!--</exercise1>-->
+
+    <!--<exercise2>-->
+    <!--<string name= "suspend row :back"></string>-->
+    <!--<string sets= "number of sets:3"></string>-->
+    <!--<string rep= "number of Repetitions:12"></string>-->
+    <!--</exercise2>-->
+
+    <!--<exercise3>-->
+    <!--<string name= "Suspended one arm row:back"></string>-->
+    <!--<string sets= "number of sets:3"></string>-->
+    <!--<string rep= "number of Repetitions:10" ></string>-->
+    <!--</exercise3>-->
+
+    <!--<exercise4>-->
+    <!--<string name= "Suspended biceps curl:bicep"></string>-->
+    <!--<string sets= "number of sets:3"></string>-->
+    <!--<string rep= "number of Repetitions:10" ></string>-->
+    <!--</exercise4>-->
+
+    <!--</Train2>-->
+
+    <!--<Train3>-->
+
+    <!--<string info= "Legs And Shoulders"> </string>-->
+
+    <!--<exercise1>-->
+    <!--<string name= "Wall squats:legs"></string>-->
+    <!--<string sets= "number of sets:4"></string>-->
+    <!--<string rep= "number of Repetitions:10"></string>-->
+    <!--</exercise1>-->
+
+    <!--<exercise2>-->
+    <!--<string name= "Suspended leg extensions:legs"></string>-->
+    <!--<string sets= "number of sets:3"></string>-->
+    <!--<string rep= "number of Repetitions:12"></string>-->
+    <!--</exercise2>-->
+
+    <!--<exercise3>-->
+    <!--<string name= "Suspended leg curl:legs">  </string>-->
+    <!--<string sets= "number of sets:3"></string>-->
+    <!--<string rep= "number of Repetitions:12" ></string>-->
+    <!--</exercise3>-->
+
+    <!--<exercise4>-->
+    <!--<string name= "Rubber band military press:shoulders"></string>-->
+    <!--<string sets= "number of sets:3"></string>-->
+    <!--<string rep= "number of Repetitions:10"></string>-->
+    <!--</exercise4>-->
+
+    <!--<exercise5>-->
+    <!--<string name= "Rubber band lateral raise:shoulders"></string>-->
+    <!--<string sets= "number of sets:3"></string>-->
+    <!--<string rep= "number of Repetitions:12"></string>-->
+    <!--</exercise5>-->
+
+    <!--</Train3>-->
+
+    <!--</string>-->
+
+</resources>
