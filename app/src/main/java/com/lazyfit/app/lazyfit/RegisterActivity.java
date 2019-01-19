@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,9 +23,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
     private TextView textViewSignin;
     private Button buttonRegister;
-    private EditText editTextPassword1;
-    private EditText editTextPassword2;
-    private EditText editTextEmail;
+    private EditText editTextPassword1,editTextPassword2 ,editTextEmail;
 
     private ProgressDialog progressDialog;
     private FirebaseAuth firebaseAuth;
@@ -37,12 +36,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
         firebaseAuth = FirebaseAuth.getInstance();
         RootRef = FirebaseDatabase.getInstance().getReference();
-
-        if(firebaseAuth.getCurrentUser()!=null){
-            //profile activity here
-            finish();
-            startActivity(new Intent(getApplicationContext(),MainActivity.class));
-        }
 
         progressDialog = new ProgressDialog(this);
 
@@ -62,13 +55,13 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         String password1 = editTextPassword1.getText().toString().trim();
         String password2 = editTextPassword2.getText().toString().trim();
 
-        if (email.length() == 0) {
+        if (TextUtils.isEmpty(email)) {
             //email is empty
             Toast.makeText(this,"Please enter email",Toast.LENGTH_SHORT).show();
             //stop the function executing further
             return;
         }
-        if(password1.length()==0 ){
+        if(TextUtils.isEmpty(password1)){
             //password is empty
             Toast.makeText(this,"Please enter password",Toast.LENGTH_SHORT).show();
             //stop the function executing further
@@ -76,30 +69,35 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         }
         if(!password1.equals(password2)){
             //password and confirm are not the same
-            Toast.makeText(this,"The Confirm and The Password Are Not Identical",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"The Confirmation Password Is Not Identical",Toast.LENGTH_SHORT).show();
             //stop the function executing further
             return;
         }
         //if validations are ok
         //we will first show a progressbar
 
+        progressDialog.setTitle("Creating New Account");
         progressDialog.setMessage("Registering User...");
+        progressDialog.setCanceledOnTouchOutside(true);
         progressDialog.show();
+
         firebaseAuth.createUserWithEmailAndPassword(email,password1)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         progressDialog.dismiss();
                         if(task.isSuccessful()) {
-                            //user is successfully registered and looged in
+                            //user is successfully registered and logged in
                             //we will start the profile activity here
                             String currentUserID = firebaseAuth.getCurrentUser().getUid();
                             RootRef.child("Users").child(currentUserID).setValue("");
                             Toast.makeText(RegisterActivity.this, "Registered Successfully", Toast.LENGTH_SHORT).show();
-                                finish();
-                                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                            progressDialog.dismiss();
+                            sendUserToLoginActivity();
                         }else{
-                            Toast.makeText(RegisterActivity.this,"Could Not Register Please Try Again",Toast.LENGTH_SHORT).show();
+                            String message =task.getException().toString();
+                            Toast.makeText(RegisterActivity.this,"Error: "+message,Toast.LENGTH_SHORT).show();
+                            progressDialog.dismiss();
                         }
                     }
                 });
@@ -111,8 +109,14 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         if(view ==buttonRegister ){
             registerUser();
         }else if(view == textViewSignin){
-            finish();
-            startActivity(new Intent(this,LoginActivity.class));
+            sendUserToLoginActivity();
         }
     }
+
+    private void sendUserToLoginActivity(){
+        Intent loginIntent = new Intent(RegisterActivity.this,LoginActivity.class);
+        startActivity(loginIntent);
+        finish();
+    }
+
 }

@@ -16,6 +16,10 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -24,29 +28,44 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private EditText editTextEmail,editTextPassword;
 
     private ProgressDialog progressDialog;
-    private FirebaseAuth firebaseAuth;
+    private FirebaseAuth mAuth;
+    private DatabaseReference userRef;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        firebaseAuth = FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance();
 
-        if(firebaseAuth.getCurrentUser()!=null){
+        if(mAuth.getCurrentUser()!=null){
             //profile activity here
-            finish();
             startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            finish();
         }
-        progressDialog = new ProgressDialog(this);
+        initialize();
 
-        textViewRegister = (TextView) findViewById(R.id.tvRegister);
-        buttonLogin = (Button) findViewById(R.id.bRegister);
-        editTextEmail = (EditText) findViewById(R.id.etUserEmail);
-        editTextPassword = (EditText) findViewById(R.id.etUserPassword);
-        forgetPassword =(TextView) findViewById(R.id.forget_password_link);
+        forgetPassword.setClickable(true);
+        forgetPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this,ResetPasswordActivity.class));
+            }
+        });
+
+
+    }
+
+    private void initialize() {
+        progressDialog = new ProgressDialog(this);
+        textViewRegister =  findViewById(R.id.tvRegister);
+        buttonLogin =  findViewById(R.id.bRegister);
+        editTextEmail =  findViewById(R.id.etUserEmail);
+        editTextPassword =  findViewById(R.id.etUserPassword);
+        forgetPassword = findViewById(R.id.forget_password_link);
         textViewRegister.setOnClickListener(this);
         buttonLogin.setOnClickListener(this);
-
+        userRef =FirebaseDatabase.getInstance().getReference().child("Users");
     }
 
     private void userLogin(){
@@ -65,20 +84,34 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             //stop the function executing further
             return;
         }
-        progressDialog.setMessage("Login in progress");
+        progressDialog.setTitle("Sign In");
+        progressDialog.setMessage("Please Wait");
         progressDialog.show();
-        firebaseAuth.signInWithEmailAndPassword(email,password)
+        mAuth.signInWithEmailAndPassword(email,password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         progressDialog.dismiss();
 
                         if(task.isSuccessful()){
-                            //start the profile activity
-                            finish();
-                            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                            String currentUserId = mAuth.getCurrentUser().getUid();
+                            String deviceToken = FirebaseInstanceId.getInstance().getToken();
+                            userRef.child(currentUserId).child("device_token")
+                                    .setValue(deviceToken)
+                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            if(task.isSuccessful()){
+                                                //start the profile activity
+                                                sendUserToMainActivity();
+                                                finish();
+                                            }
+                                        }
+                                    });
                         }else{
-                            Toast.makeText(LoginActivity.this, "Incorrect Email or Password", Toast.LENGTH_SHORT).show();
+                            progressDialog.dismiss();
+                            String message = task.getException().toString();
+                            Toast.makeText(LoginActivity.this, "Error: "+message, Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -89,8 +122,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         if(view ==buttonLogin ){
             userLogin();
         }else if(view == textViewRegister){
-            finish();
             startActivity(new Intent(this,RegisterActivity.class));
+            finish();
         }
+    }
+
+    private void sendUserToMainActivity(){
+        Intent mainIntent =new Intent(LoginActivity.this,MainActivity.class);
+        mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(mainIntent);
+        finish();
     }
 }
