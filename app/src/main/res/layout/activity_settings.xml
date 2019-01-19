@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingsActivity">
+
+    <include
+        layout="@layout/app_bar_layout"
+        android:id="@+id/settings_toolbar"
+        >
+    </include>
+
+
+<de.hdodenhof.circleimageview.CircleImageView
+   android:id="@+id/set_profile_image"
+    android:layout_width="250dp"
+    android:layout_height="250dp"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    android:src="@drawable/profile_image"
+    app:civ_border_color="@color/colorPrimaryDark"
+    app:civ_border_width="5dp"
+    android:layout_marginTop="70dp"/>
+
+    <TextView
+        android:id="@+id/twSettings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/set_profile_image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:textStyle="bold"
+        android:fontFamily="casual"
+        android:text="User Settings"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="25sp" />
+
+    <EditText
+        android:id="@+id/set_user_name"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/twSettings"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:drawableStart="@drawable/edit_profile"
+        android:drawableLeft="@drawable/edit_profile"
+        android:ems="10"
+        android:fontFamily="casual"
+        android:hint="User Name"
+        android:inputType="textImeMultiLine"
+        android:textColor="@color/colorPrimaryDark" />
+
+    <EditText
+        android:id="@+id/set_about_me"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/set_user_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:drawableStart="@drawable/edit_status"
+        android:drawableLeft="@drawable/edit_status"
+        android:ems="10"
+        android:fontFamily="casual"
+        android:hint="I am new and eager to start training"
+        android:inputType="textImeMultiLine"
+        android:textColor="@color/colorPrimaryDark" />
+
+    <Button
+        android:id="@+id/update_setting_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/set_about_me"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/colorAccent"
+        android:fontFamily="casual"
+        android:text="Update"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</RelativeLayout>
